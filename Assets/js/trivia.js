@@ -21,9 +21,20 @@ function populate() {
 	}
 };
 
+function guess(id, guess) {
+	var button = document.getElementbyId();
+	button.onclick = function(){
+		quiz.guess(guess);
+		populate();
+	}
+}
+
 function showScores(){
 		var gameOverHtml= "<h1>Results</h1>";
 			gameOverHtml += "<h2 id='score'>Your scores:" + quiz.score + "</h2>";
+		var element = document.getElementbyId("quiz");
+		element.innerHTML= gameOverHtml;
+		guess ("btn" + i, choices[i]);
 }
 
 
